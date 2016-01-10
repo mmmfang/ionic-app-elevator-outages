@@ -21,7 +21,7 @@
     }]);
 
 //http://www.clearlyinnovative.com/working-xml2json-strings-ionic-framework-project
-
+//http://rabidgadfly.com/2013/02/angular-and-xml-no-problem/
  
 var AppController = function($scope,DataSource) {
      

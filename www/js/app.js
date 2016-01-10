@@ -23,25 +23,23 @@ angular.module('mtaApp', ['ionic'])
   });
 })
 
-.controller('OutageCtrl', ['$http', '$scope', function($http, $scope){
+// .controller('OutageCtrl', ['$http', '$scope', function($http, $scope){
 
- var ctrl=this;
-  
-  this.makeAPICall = function(){
-    $.get('/feed', function(xml){
+//  var ctrl=this;
 
-      // Create x2js instance with default config
-      var x2js = new X2JS();
-      var xmlText = "<MyRoot><test>Success</test><test2><item>val1</item><item>val2</item></test2></MyRoot>";
-      var jsonObj = x2js.xml_str2json( xmlText );
+//     $.get('/feed', function(xml){
 
-        var json = $.xml2json(xml); //json will get all the json
-        ctrl.outage = json.outage; //gets outages as objects in an array
-    });
-   };
-  this.makeAPICall();
+//       // Create x2js instance with default config
+//       var x2js = new X2JS();
+//       var xmlText = "<MyRoot><test>Success</test><test2><item>val1</item><item>val2</item></test2></MyRoot>";
+//       var jsonObj = x2js.xml_str2json( xmlText );
 
-}])
+//         var json = $.xml2json(xml); //json will get all the json
+//         ctrl.outage = json.outage; //gets outages as objects in an array
+//     });
+//    };
+
+// }])
 
 
 //angular.module('mtaAppService',[])
@@ -64,21 +62,21 @@ angular.module('mtaApp', ['ionic'])
                 })
            }
        }
-    }]);
+    }])
 
 //http://www.clearlyinnovative.com/working-xml2json-strings-ionic-framework-project
 
  
-var AppController = function($scope,DataSource) {
+.controller('AppController', function($scope,DataSource) {
      
     //This is the callback function
     setData = function(data) {
-        console.log("setdata", data);
-        $scope.dataSet = data;
+        console.log("setdata", data.NYCOutages.outage);
+        $scope.dataSet = data.NYCOutages.outage; //array of 40 objects
     }
          
     DataSource.get(setData);
-  };   
+  });   
 
 // var AppController = function($scope,DataSource) {
 

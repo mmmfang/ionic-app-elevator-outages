@@ -28,12 +28,16 @@
           <ion-header-bar class="bar-stable">
             <h1 class="title">MTA Elevator Outages</h1>
           </ion-header-bar> 
-          <ion-content>
+          <ion-content ng-controller="AppController">
             <p>Home tag</p>
-            <h1>{{NYCOutages.outage[0]}}</h1>
-            <h2>{{json}}</h2>
-
+            <!-- <h1>{{dataSet}}</h1> -->
+            <div ng-repeat="d in dataSet">
+            <li>{{d.station}}</li>
+            <li>{{d.borough}}</li>
+            </div>
           </ion-content>
+
+
         </ion-tab> 
 
         <ion-tab title="Status"> 
@@ -63,4 +67,5 @@
       </ion-content>
 
   </body>
+  <script src="js/xml2json.js"></script>
 </html>
