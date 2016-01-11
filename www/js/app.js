@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('mtaApp', ['ionic'])
+var app=angular.module('mtaApp', ['ionic', 'mtaApp.xmlconverter']);
 
-.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,29 +21,9 @@ angular.module('mtaApp', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-})
+});
 
-// .controller('OutageCtrl', ['$http', '$scope', function($http, $scope){
-
-//  var ctrl=this;
-
-//     $.get('/feed', function(xml){
-
-//       // Create x2js instance with default config
-//       var x2js = new X2JS();
-//       var xmlText = "<MyRoot><test>Success</test><test2><item>val1</item><item>val2</item></test2></MyRoot>";
-//       var jsonObj = x2js.xml_str2json( xmlText );
-
-//         var json = $.xml2json(xml); //json will get all the json
-//         ctrl.outage = json.outage; //gets outages as objects in an array
-//     });
-//    };
-
-// }])
-
-
-//angular.module('mtaAppService',[])
-    .factory('DataSource', ['$http',function($http){
+app.factory('DataSource', ['$http',function($http){
        return {
            get: function(callback){
                 $http.get('/feed', {transformResponse:function(data) {
@@ -65,34 +45,35 @@ angular.module('mtaApp', ['ionic'])
     }])
 
 //http://www.clearlyinnovative.com/working-xml2json-strings-ionic-framework-project
-
+//http://rabidgadfly.com/2013/02/angular-and-xml-no-problem/
  
-.controller('AppController', function($scope,DataSource) {
+app.controller('OutageCtrl', function($scope,DataSource) {
      
     //This is the callback function
-    setData = function(data) {
-        console.log("setdata", data.NYCOutages.outage);
+    outageData = function(data) {
+        console.log("outageData", data.NYCOutages.outage);
         $scope.dataSet = data.NYCOutages.outage; //array of 40 objects
     }
          
-    DataSource.get(setData);
+    DataSource.get(outageData);
   });   
 
-// var AppController = function($scope,DataSource) {
 
-//   var SOURCE_FILE = "timer.xml";
 
-//   xmlTransform = function(data) {
-//     console.log("transform data");
-//     var x2js = new X2JS();
-//     var json = x2js.xml_str2json(data);
-//     return json.TimerStatus;
-//   };
+// .controller('OutageCtrl', ['$http', '$scope', function($http, $scope){
 
-//   setData = function(data) {
-//     console.log("setdata", data);
-//     $scope.dataSet = data;
-//   };
+//  var ctrl=this;
 
-//   DataSource.get(SOURCE_FILE,setData,xmlTransform);
-// };
+//     $.get('/feed', function(xml){
+
+//       // Create x2js instance with default config
+//       var x2js = new X2JS();
+//       var xmlText = "<MyRoot><test>Success</test><test2><item>val1</item><item>val2</item></test2></MyRoot>";
+//       var jsonObj = x2js.xml_str2json( xmlText );
+
+//         var json = $.xml2json(xml); //json will get all the json
+//         ctrl.outage = json.outage; //gets outages as objects in an array
+//     });
+//    };
+
+// }])

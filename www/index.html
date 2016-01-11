@@ -19,18 +19,19 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="js/services/xmlconverter.js"></script>
     <script src="js/app.js"></script>
   </head>
   <body ng-app="mtaApp">
+
+        <ion-nav-view></ion-nav-view>
      
       <ion-tabs class="tabs-positive">
-        <ion-tab title="Home"> 
+        <ion-tab title="Home" icon-off="ion-android-subway" icon-on="ion-android-subway"> 
           <ion-header-bar class="bar-stable">
             <h1 class="title">MTA Elevator Outages</h1>
           </ion-header-bar> 
-          <ion-content ng-controller="AppController">
-            <p>Home tag</p>
-            <!-- <h1>{{dataSet}}</h1> -->
+          <ion-content ng-controller="OutageCtrl">
             <div ng-repeat="d in dataSet">
             <li>{{d.station}}</li>
             <li>{{d.borough}}</li>
@@ -40,13 +41,13 @@
 
         </ion-tab> 
 
-        <ion-tab title="Status"> 
+        <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong"> 
           <ion-content>
             <p>Status area</p>
           </ion-content>
         </ion-tab> 
 
-        <ion-tab title="Account?"> 
+        <ion-tab title="Account?" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear"> 
           <ion-header-bar class="bar-stable">
             <h1 class="title">Account?</h1>
           </ion-header-bar>         
@@ -55,8 +56,8 @@
           </ion-content>
         </ion-tab> 
 
-        <ion-tab title="Feedback"> 
-          <ion-header-bar class="bar-stable">
+        <ion-tab title="Feedback" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes"> 
+          <ion-header-bar class="bar-stable" >
             <h1 class="title">Feedback</h1>
           </ion-header-bar> 
           <ion-content>
@@ -66,6 +67,14 @@
     </ion-tabs>
       </ion-content>
 
+
+<!--       SEARCH BAR
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search">
+  </label>
+</div> -->
   </body>
   <script src="js/xml2json.js"></script>
 </html>
