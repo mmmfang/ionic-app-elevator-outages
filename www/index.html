@@ -26,20 +26,7 @@
 
         <ion-nav-view></ion-nav-view>
      
-      <ion-tabs class="tabs-positive">
-        <ion-tab title="Home" icon-off="ion-android-subway" icon-on="ion-android-subway"> 
-          <ion-header-bar class="bar-stable">
-            <h1 class="title">MTA Elevator Outages</h1>
-          </ion-header-bar> 
-          <ion-content ng-controller="OutageCtrl">
-            <div ng-repeat="d in dataSet">
-            <li>{{d.station}}</li>
-            <li>{{d.borough}}</li>
-            </div>
-          </ion-content>
 
-
-        </ion-tab> 
 
         <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong"> 
           <ion-content>
