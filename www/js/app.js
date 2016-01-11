@@ -20,19 +20,16 @@ app.run(function($ionicPlatform) {
 });
 
 
-//http://www.clearlyinnovative.com/working-xml2json-strings-ionic-framework-project
-//http://rabidgadfly.com/2013/02/angular-and-xml-no-problem/
- 
-app.controller('OutageCtrl', function($scope, xmlconverter) {
+app.controller('OutageCtrl', function($scope, XmlConverter) {
      
     //This is the callback function
     outageData = function(data) {
         console.log("outageData", data.NYCOutages.outage);
-        $scope.dataSet = data.NYCOutages.outage; //array of 40 objects
+        $scope.outages = data.NYCOutages.outage; //array of 40 objects
     }
          
-    xmlconverter.get(outageData);
+    XmlConverter.get(outageData);
   });   
 
 
-}()); //IIFE
+})(); //IIFE
