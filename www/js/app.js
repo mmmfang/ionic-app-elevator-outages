@@ -1,5 +1,5 @@
 (function(){
-var app=angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter']);
+var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter']);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,12 +24,12 @@ app.controller('OutageCtrl', function($scope, XmlConverter) {
      
     //This is the callback function
     outageData = function(data) {
-        console.log("outageData", data.NYCOutages.outage);
-        $scope.outages = data.NYCOutages.outage; //array of 40 objects
-    }
-         
+        //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
+        $scope.outages = data.NYCOutages.outage;
+    };
+
     XmlConverter.get(outageData);
-  });   
+});
 
 
 })(); //IIFE
