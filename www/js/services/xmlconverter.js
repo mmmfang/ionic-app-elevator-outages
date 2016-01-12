@@ -1,4 +1,4 @@
-angular.module('mtaApp.xmlconverter', [])
+angular.module('mtaApp.XmlConverter', [])
 
 .factory('XmlConverter', ['$http',function($http){
     return {
