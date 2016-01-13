@@ -1,7 +1,7 @@
 <ion-view title="MTA Equipment Outages">      
-  <ion-content ng-controller="OutageCtrl">
+  <ion-content>
     <ion-list>
-      <ion-item ng-repeat="outage in outages track by outage.equipment">
+      <ion-item ng-repeat="outage in outages">
             <h2>{{outage.station}}</h2>
             <p>{{outage.borough}}</p>
       </ion-item>

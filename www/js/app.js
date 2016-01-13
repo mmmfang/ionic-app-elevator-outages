@@ -91,4 +91,4 @@ $scope.add = "add";
 
 
 
-})(); //IIFE
+}()); //IIFE
