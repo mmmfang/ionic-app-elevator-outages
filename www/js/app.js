@@ -1,7 +1,6 @@
 (function(){
 var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter']);
 
-
 app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('list', {
     url:'/list',
@@ -18,12 +17,8 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'templates/edit.html',
     controller: 'AddCtrl'
   });
-//using same template for ADD and EDIT functions, 
-//so that's why we set controller here
-
   $urlRouterProvider.otherwise('/home');
 });
-
 
 
 app.run(function($ionicPlatform) {
@@ -33,9 +28,8 @@ app.run(function($ionicPlatform) {
       // for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
+      // stops the viewport from snapping when text inputs are focused. 
+      // Ionic handles this internally for a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if(window.StatusBar) {
@@ -45,9 +39,8 @@ app.run(function($ionicPlatform) {
 });
 
 
-//TURN TO SERVICE??!!??
 app.controller('OutageCtrl', function($scope, XmlConverter) {
-     
+    
     //This is the callback function
     outageData = function(data) {
         //console.log("outageData", data.NYCOutages.outage); //array of 40 objects

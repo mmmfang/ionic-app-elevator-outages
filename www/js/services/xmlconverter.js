@@ -4,8 +4,7 @@ angular.module('mtaApp.XmlConverter', [])
     return {
       get: function(callback){
             $http.get('/feed', {transformResponse:function(data) {
-              // convert the data to JSON and provide
-              // it to the success function below
+            // convert the data to JSON and provide to the success function below
                 var x2js = new X2JS();
                 var json = x2js.xml_str2json( data );
                 return json;
