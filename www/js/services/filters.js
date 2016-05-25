@@ -1,5 +1,5 @@
-angular.module('mtaApp.Filters', [])
-.factory('Filters', function(){
+angular.module('mtaApp.wordFilter', [])
+.factory('wordFilter', function(){
   return {
   	test: function(){
   		alert("I'm here")

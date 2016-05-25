@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter', 'mtaApp.Filters']);
+var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter', 'mtaApp.wordFilter']);
 
 app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('list', {
@@ -49,8 +49,7 @@ app.run(function($ionicPlatform) {
 });
 
 
-app.controller('OutageCtrl', function($scope, XmlConverter, Filters) {
-    
+app.controller('OutageCtrl', function($scope, XmlConverter, wordFilter) {
     //This is the callback function
     outageData = function(data) {
         //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
@@ -67,12 +66,19 @@ $scope.home = "home";
 });
 
 
-app.controller('BoroCtrl', function($scope) {
-     
-$scope.add = "add";
-console.log($scope.add)
+app.controller('BoroCtrl', function($scope, XmlConverter, wordFilter) {
+
+    //This is the callback function
+    outageData = function(data) {
+        $scope.outages = data.NYCOutages.outage;
+        //console.log($scope.outages);
+    };
+
+    XmlConverter.get(outageData);
 
 });
+
+
 
 ///PLANNING
 //SEARCHCTRL?? by borough, train line, station(search)
@@ -83,17 +89,29 @@ console.log($scope.add)
 
 app.controller('TrainlineCtrl', function($scope, XmlConverter) {
 
-//     //This is the callback function
-//     outageData = function(data) {
-//         //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
-//         $scope.outages = data.NYCOutages.outage;
-//     };
+    //This is the callback function
+    outageData = function(data) {
+     // console.log("outageData", data.NYCOutages.outage); //array of 40 objects
+        $scope.outages = data.NYCOutages.outage;  
+    };
 
-//     XmlConverter.get(outageData);
+    XmlConverter.get(outageData);
 
 });
 
 app.controller('StationCtrl', function($scope, XmlConverter) {
+
+    //This is the callback function
+    outageData = function(data) {
+        //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
+        $scope.outages = data.NYCOutages.outage;
+    };
+
+    XmlConverter.get(outageData);
+
+});
+
+app.controller('HomeCtrl', function($scope, XmlConverter) {
 
 //     //This is the callback function
 //     outageData = function(data) {
