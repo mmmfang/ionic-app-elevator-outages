@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter', 'mtaApp.wordFilter']);
+var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter']);
 
 app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('list', {
@@ -49,7 +49,7 @@ app.run(function($ionicPlatform) {
 });
 
 
-app.controller('OutageCtrl', function($scope, XmlConverter, wordFilter) {
+app.controller('OutageCtrl', function($scope, XmlConverter) {
     //This is the callback function
     outageData = function(data) {
         //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
@@ -66,7 +66,7 @@ $scope.home = "home";
 });
 
 
-app.controller('BoroCtrl', function($scope, XmlConverter, wordFilter) {
+app.controller('BoroCtrl', function($scope, XmlConverter) {
 
     //This is the callback function
     outageData = function(data) {
