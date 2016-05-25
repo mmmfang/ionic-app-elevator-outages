@@ -10,7 +10,7 @@
       <ion-item ng-repeat="outage in outages" ng-show="outage.borough===boroughValue">
             <h2>{{outage.station}} ({{outage.borough | boroFilter}})</h2>
             <p>Lines served: {{outage.trainno}}</p>
-            <p>{{outage.equipment | equipmentFilter}} broken at {{outage.serving | lowercase}} </p>
+            <p>{{outage.equipment | equipmentFilter}} outage at {{outage.serving | lowercase}} </p>
             <p>Back in Service: {{outage.estimatedreturntoservice}}</p>
 			
 

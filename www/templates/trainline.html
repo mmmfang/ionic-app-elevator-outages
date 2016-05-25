@@ -1,14 +1,92 @@
-<ion-view title="Outages by Borough">      
+<ion-view title="Outages by Trainline">      
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="outage in outages">
+
+    <br/>
+<!-- <div id="box"></div> -->
+<br/>
+<br/>
+
+<div class="bg-white centered">
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(1)">
+    <img src="images/1.gif" alt="1"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(2)">
+    <img src="images/2.gif" alt="2"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(3)">
+    <img src="images/3.gif" alt="3"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(4)">
+    <img src="images/4.jpg" alt="4"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(5)">
+    <img src="images/5.jpg" alt="5"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(6)">
+    <img src="images/6.jpg" alt="6"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines(7)">
+    <img src="images/7.jpg" alt="7"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('A')">
+    <img src="images/A.jpg" alt="A"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('B')">
+    <img src="images/B.jpg" alt="B"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('C')">
+    <img src="images/C.jpg" alt="C"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('D')">
+    <img src="images/D.jpg" alt="D"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('E')">
+    <img src="images/E.jpg" alt="E"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('F')">
+    <img src="images/F.jpg" alt="F"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('G')">
+    <img src="images/G.jpg" alt="G"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('J')">
+    <img src="images/J.jpg" alt="J"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('L')">
+    <img src="images/L.jpg" alt="L"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('M')">
+    <img src="images/M.jpg" alt="M"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('N')">
+    <img src="images/N.jpg" alt="N"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('Q')">
+    <img src="images/Q.jpg" alt="Q"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('R')">
+    <img src="images/R.jpg" alt="R"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('S')">
+    <img src="images/S.jpg" alt="S"></ion-item>
+  <ion-item item-thumbnail-left href="/onetrainline" ng-click="train.getTrainLines('Z')">
+    <img src="images/Z.jpg" alt="Z"></ion-item>
+</div>
+
+
+<!-- <ul class="outage-box" ng-repeat="el in elevator.outage  | filter:searchLine">
+ 
+    <div class="station">
+      <li class="station-name">{{el.station}}</li>
+      <li class="trainlisting">serving these trains: {{el.trainno}}</li>
+    </div>
+    <table class="table-condensed">
+      <tr><td>Borough:</td>
+        <td> {{el.borough | boroFilter}}</td> </tr>
+      <tr><td>Elevator or escalator? </td>
+        <td> {{el.equipment | equipmentFilter}}</td> </tr>
+      <tr><td>Location of outage: </td>
+        <td> {{el.serving | lowercase}}</td> </tr>
+      <tr><td>Reason: </td>
+        <td> {{el.reason | lowercase}}</td> </tr>
+      <tr><td>Back in Service on: </td>
+        <td> {{el.estimatedreturntoservice}}</td> </tr>
+      <tr><td>Out of Service since: </td>
+        <td> {{el.outagedate}}</td></tr>
+    </table>
+
+ </ul>   -->
+
+
+<!--       <ion-item ng-repeat="outage in outages">
             <h2>{{outage.station}} ({{outage.borough | boroFilter}})</h2>
             <p>Lines served: {{outage.trainno}}</p>
             <p>{{outage.equipment | equipmentFilter}} broken at {{outage.serving | lowercase}} </p>
             <p>Back in Service: {{outage.estimatedreturntoservice}}</p>
       
 
-      </ion-item>
+      </ion-item> -->
     </ion-list>
   </ion-content>
 </ion-view>
