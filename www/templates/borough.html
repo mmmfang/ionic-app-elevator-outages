@@ -1,0 +1,14 @@
+<ion-view title="Outages by Borough">      
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="outage in outages">
+            <h2>{{outage.station}} ({{outage.borough}})</h2>
+            <p>Lines served: {{outage.trainno}}</p>
+            <p>{{outage.equipment}} broken at {{outage.serving | lowercase}} </p>
+            <p>Back in Service: {{outage.estimatedreturntoservice}}</p>
+			
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
