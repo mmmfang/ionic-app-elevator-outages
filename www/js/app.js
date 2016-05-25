@@ -22,6 +22,11 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'templates/trainline.html',
     controller: 'TrainlineCtrl'
   });
+  $stateProvider.state('station', {
+    url:'/station',
+    templateUrl: 'templates/station.html',
+    controller: 'StationCtrl'
+  });
   $urlRouterProvider.otherwise('/home');
 });
 
@@ -65,6 +70,7 @@ $scope.home = "home";
 app.controller('BoroCtrl', function($scope) {
      
 $scope.add = "add";
+console.log($scope.add)
 
 });
 
@@ -75,7 +81,7 @@ $scope.add = "add";
 //put custom filters in a directive
 // app.factory('properName': function(char) {},) FOR THOSE EL ESC, BOROUGH SEARCH
 
-app.controller('SpecificOutagesCtrl', function($scope, XmlConverter) {
+app.controller('TrainlineCtrl', function($scope, XmlConverter) {
 
 //     //This is the callback function
 //     outageData = function(data) {
@@ -87,6 +93,17 @@ app.controller('SpecificOutagesCtrl', function($scope, XmlConverter) {
 
 });
 
+app.controller('StationCtrl', function($scope, XmlConverter) {
+
+//     //This is the callback function
+//     outageData = function(data) {
+//         //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
+//         $scope.outages = data.NYCOutages.outage;
+//     };
+
+//     XmlConverter.get(outageData);
+
+});
 
 
 }()); //IIFE
