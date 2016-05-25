@@ -1,8 +1,11 @@
-angular.module('mtaApp.Filters', []);
-
-app.service('myService', function() {
+angular.module('mtaApp.Filters', [])
+.factory('Filters', function(){
   return {
-    elorEsc: function(word){
+  	test: function(){
+  		alert("I'm here")
+ 		},
+
+ 		elorEsc: function(word){
         var charZero = word.charAt(0);
         var charOne = word.charAt(1);
 
@@ -12,6 +15,7 @@ app.service('myService', function() {
           return "Escalator";
         }
     },
+
     filterBoro: function (word) {
         var charCero = word.charAt(0);
         var charUno = word.charAt(1);
@@ -26,8 +30,8 @@ app.service('myService', function() {
           return "Bronx"
         } else {
           return "N/A"
-      	;
      	};
-    });
+    }
+  }
 });
 

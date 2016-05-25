@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter']);
+var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter', 'mtaApp.Filters']);
 
 app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('list', {
@@ -12,10 +12,15 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'templates/home.html',
     controller: 'HomeCtrl'
   });
-  $stateProvider.state('add', {
-    url:'/add',
-    templateUrl: 'templates/edit.html',
-    controller: 'AddCtrl'
+  $stateProvider.state('borough', {
+    url:'/borough',
+    templateUrl: 'templates/borough.html',
+    controller: 'BoroCtrl'
+  });
+  $stateProvider.state('trainline', {
+    url:'/trainline',
+    templateUrl: 'templates/trainline.html',
+    controller: 'TrainlineCtrl'
   });
   $urlRouterProvider.otherwise('/home');
 });
@@ -39,7 +44,7 @@ app.run(function($ionicPlatform) {
 });
 
 
-app.controller('OutageCtrl', function($scope, XmlConverter) {
+app.controller('OutageCtrl', function($scope, XmlConverter, Filters) {
     
     //This is the callback function
     outageData = function(data) {
@@ -50,14 +55,14 @@ app.controller('OutageCtrl', function($scope, XmlConverter) {
     XmlConverter.get(outageData);
 });
 
-app.controller('HomeCtrl', function($scope) {
+app.controller('HomeCtrl', function($scope, Filters) {
      
 $scope.home = "home";
 
 });
 
 
-app.controller('AddCtrl', function($scope) {
+app.controller('BoroCtrl', function($scope) {
      
 $scope.add = "add";
 
@@ -70,7 +75,7 @@ $scope.add = "add";
 //put custom filters in a directive
 // app.factory('properName': function(char) {},) FOR THOSE EL ESC, BOROUGH SEARCH
 
-// app.controller('SpecificOutagesCtrl', function($scope, XmlConverter) {
+app.controller('SpecificOutagesCtrl', function($scope, XmlConverter) {
 
 //     //This is the callback function
 //     outageData = function(data) {
@@ -80,7 +85,7 @@ $scope.add = "add";
 
 //     XmlConverter.get(outageData);
 
-// }
+});
 
 
 
