@@ -91,10 +91,9 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter) {
 
     //This is the callback function
     outageData = function(data) {
-     // console.log("outageData", data.NYCOutages.outage); //array of 40 objects
         $scope.outages = data.NYCOutages.outage;  
     };
-
+       
     XmlConverter.get(outageData);
 
 });

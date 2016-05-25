@@ -12,7 +12,7 @@ angular.module('mtaApp.XmlConverter', [])
             }).success(function(data, status) {
             // send the converted data back to the callback function
               callback(data);
-              console.log(data);
+              console.log(data)
             });
       }
     };

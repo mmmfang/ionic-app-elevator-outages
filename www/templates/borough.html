@@ -1,7 +1,13 @@
 <ion-view title="Outages by Borough">      
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="outage in outages">
+      <div class="borough-links">
+  <a ng-click="boroughValue='QNS'">  QUEENS  </a>  | 
+  <a ng-click="boroughValue='BX'">  BRONX  </a>  | 
+  <a ng-click="boroughValue='MN'">  MANHATTAN  </a> |
+  <a ng-click="boroughValue='BKN'">  BROOKLYN </a>
+</div>
+      <ion-item ng-repeat="outage in outages" ng-show="outage.borough===boroughValue">
             <h2>{{outage.station}} ({{outage.borough | boroFilter}})</h2>
             <p>Lines served: {{outage.trainno}}</p>
             <p>{{outage.equipment | equipmentFilter}} broken at {{outage.serving | lowercase}} </p>
@@ -12,3 +18,4 @@
     </ion-list>
   </ion-content>
 </ion-view>
+
