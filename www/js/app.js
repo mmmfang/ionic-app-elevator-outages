@@ -105,10 +105,7 @@ app.controller('StationCtrl', function($scope, XmlConverter) {
 
 });
 
-
-//////////////////// ANGULAR CUSTOM FILTERS////////////////////////////
-///////////////////////////////////////////////////////////////////////
-
+//ANGULAR CUSTOM FILTERS - TO DO: See how ionic handles angular custom filters
 
 //To display whether elevator or escalator is broken
 app.filter('equipmentFilter', function() {
