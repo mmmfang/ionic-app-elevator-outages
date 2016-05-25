@@ -106,4 +106,40 @@ app.controller('StationCtrl', function($scope, XmlConverter) {
 });
 
 
+//////////////////// ANGULAR CUSTOM FILTERS////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+//To display whether elevator or escalator is broken
+app.filter('equipmentFilter', function() {
+   return function(word) {
+   var charZero = word.charAt(0);
+   var charOne = word.charAt(1);
+        if (charZero=='E' && charOne=='L') {
+          return "Elevator";
+        } else {
+          return "Escalator";
+        }
+     }
+});
+
+//To display full borough name from abbreviation provided
+app.filter('boroFilter', function() {
+   return function(word) {
+   var charZero = word.charAt(0);
+   var charOne = word.charAt(1);
+        if (charZero=='M' && charOne=='N') {
+          return "Manhattan";
+        } else if (charZero=='Q' && charOne=='N') {
+          return "Queens";
+        } else if (charZero=='B' && charOne=='K') {
+          return "Brooklyn"
+        } else if (charZero=='B' && charOne=='X') {
+          return "Bronx"
+        } else {
+          return "N/A"
+        }
+     }
+});
+
 }()); //IIFE
