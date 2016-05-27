@@ -88,14 +88,11 @@ app.controller('BoroCtrl', function($scope, XmlConverter) {
 // app.factory('properName': function(char) {},) FOR THOSE EL ESC, BOROUGH SEARCH
 
 app.controller('TrainlineCtrl', function($scope, XmlConverter) {
-
-    //This is the callback function
-    outageData = function(data) {
-        $scope.outages = data.NYCOutages.outage;  
-    };
-       
+  
+  outageData=function(data) {
+    $scope.outages = data.NYCOutages.outage;  
+  };     
     XmlConverter.get(outageData);
-
 });
 
 app.controller('StationCtrl', function($scope, XmlConverter) {
