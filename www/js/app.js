@@ -48,16 +48,18 @@ app.run(function($ionicPlatform) {
 
 
 app.controller('OutageCtrl', function($scope, XmlConverter) {
-    //This is the callback function
-    outageData = function(data) {
+
+    var outageData = function(data) {
         //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
         $scope.outages = data.NYCOutages.outage;
     };
 
     XmlConverter.get(outageData);
+
+
 });
 
-app.controller('HomeCtrl', function($scope, Filters) {   
+app.controller('HomeCtrl', function($scope) {   
   $scope.home = "home";
 });
 
@@ -79,7 +81,6 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter) {
 });
 
 app.controller('StationCtrl', function($scope, XmlConverter) {
-
     outageData = function(data) {
         $scope.outages = data.NYCOutages.outage;
     };

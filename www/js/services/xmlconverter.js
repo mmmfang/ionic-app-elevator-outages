@@ -1,6 +1,6 @@
 angular.module('mtaApp.XmlConverter', [])
 
-.factory('XmlConverter', ['$http',function($http){
+.factory('XmlConverter', ['$http', function($http){
     return {
       get: function(callback){
             $http.get('/feed', {transformResponse:function(data) {
