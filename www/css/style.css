@@ -1,6 +1,4 @@
-/* Empty. Add your own CSS if you like */
 
-.gallery {
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+.bg-white {
+	background-color: #FFF;
 }

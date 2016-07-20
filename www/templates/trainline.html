@@ -1,10 +1,10 @@
 <ion-view title="Outages by Trainline"> 
-  <ion-content>     
+ <ion-content>     
   <br/>
   <br/>
 
-  <div>
-    <div class="row bg-white" wrap>
+  <div class="bg-white">
+    <div class="row" wrap>
       <div class="col col-33">
         <button href="/onetrainline" ng-click="train.getTrainLines(1)">
           <img src="img/1.gif" alt="1" width="100%"></button></div>
@@ -93,35 +93,9 @@
         <button href="/onetrainline" ng-click="train.getTrainLines('S')">
         <img src="img/S.jpg" alt="S" width="100%"></button></div>
     </div>
-
-
-
-</div>
-</ion-content>
+  </div>
+ </ion-content>
 </ion-view>
-
-<!-- <ul class="outage-box" ng-repeat="el in elevator.outage  | filter:searchLine">
- 
-    <div class="station">
-      <li class="station-name">{{el.station}}</li>
-      <li class="trainlisting">serving these trains: {{el.trainno}}</li>
-    </div>
-    <table class="table-condensed">
-      <tr><td>Borough:</td>
-        <td> {{el.borough | boroFilter}}</td> </tr>
-      <tr><td>Elevator or escalator? </td>
-        <td> {{el.equipment | equipmentFilter}}</td> </tr>
-      <tr><td>Location of outage: </td>
-        <td> {{el.serving | lowercase}}</td> </tr>
-      <tr><td>Reason: </td>
-        <td> {{el.reason | lowercase}}</td> </tr>
-      <tr><td>Back in Service on: </td>
-        <td> {{el.estimatedreturntoservice}}</td> </tr>
-      <tr><td>Out of Service since: </td>
-        <td> {{el.outagedate}}</td></tr>
-    </table>
-
- </ul>   -->
 
 
 <!--       <button ng-repeat="outage in outages">
@@ -132,6 +106,4 @@
       
 
       </button> -->
-    </ion-list>
-  </ion-content>
-</ion-view>
+
