@@ -123,4 +123,16 @@ app.filter('boroFilter', function() {
      }
 });
 
+//CUSTOM DIRECTIVE
+app.directive('outageListing', function(){
+  return {
+    template: '<ng-include src="getTemplateUrl()" />',
+    controller: function ($scope) {
+      $scope.getTemplateUrl = function(){
+        return "../templates/list2.html"
+      }
+    }
+  }
+})
+
 }()); //IIFE
