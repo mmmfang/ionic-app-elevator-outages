@@ -129,7 +129,7 @@ app.directive('outageListing', function(){
     template: '<ng-include src="getTemplateUrl()" />',
     controller: function ($scope) {
       $scope.getTemplateUrl = function(){
-        return "../templates/list2.html"
+        return "../templates/outage.html"
       }
     }
   }
