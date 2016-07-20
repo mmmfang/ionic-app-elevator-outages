@@ -1,7 +1,7 @@
 <ion-view title="MTA Equipment Outages">      
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="outage in outages">
+      <ion-item ng-repeat="outage in outages" class="item-text-wrap">
         <h2>{{outage.station}} ({{outage.borough}})</h2>
         <p>Lines served: {{outage.trainno}}</p>
         <p>{{outage.equipment}} broken at {{outage.serving | lowercase}} </p>

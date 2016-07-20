@@ -5,13 +5,13 @@
         <button class="button button-positive button-block" ng-click="boroughValue='BX'" ng-hide="(boroughValue && boroughValue!='BX')">  BRONX  </button>  
         <button class="button button-stable button-block" ng-click="boroughValue='MN'" ng-hide="(boroughValue && boroughValue!='MN')">  MANHATTAN  </button> 
         <button class="button button-block button-positive" ng-click="boroughValue='BKN'" ng-hide="(boroughValue && boroughValue!='BKN')">  BROOKLYN </button>
-        <button class="button button-block button-stable" ng-click="boroughValue='QNS'" ng-hide="(boroughValue && boroughValue!='QNS')">  Queens </button>   
+        <button class="button button-block button-stable" ng-click="boroughValue='QNS'" ng-hide="(boroughValue && boroughValue!='QNS')">  QUEENS </button>   
       </div>
 
-      <ion-item ng-repeat="outage in outages" ng-show="outage.borough===boroughValue">
+      <ion-item ng-repeat="outage in outages" ng-show="outage.borough===boroughValue" class="item-text-wrap">
         <h2>{{outage.station}} ({{outage.borough | boroFilter}})</h2>
         <p>Lines served: {{outage.trainno}}</p>
-        <p>{{outage.equipment | equipmentFilter}} outage at {{outage.serving | lowercase}} </p>
+        <p>{{outage.equipment | equipmentFilter}} out at {{outage.serving | lowercase}} </p>
         <p>Back in Service: {{outage.estimatedreturntoservice}}</p>
       </ion-item>
       
