@@ -2,10 +2,10 @@
   <ion-content>
     <ion-list>
       <div class="borough-links">
-        <a ng-click="boroughValue='QNS'">  QUEENS  </a>  | 
-        <a ng-click="boroughValue='BX'">  BRONX  </a>  | 
-        <a ng-click="boroughValue='MN'">  MANHATTAN  </a> |
-        <a ng-click="boroughValue='BKN'">  BROOKLYN </a>
+        <button class="button button-positive button-block" ng-click="boroughValue='BX'" ng-hide="(boroughValue && boroughValue!='BX')">  BRONX  </button>  
+        <button class="button button-stable button-block" ng-click="boroughValue='MN'" ng-hide="(boroughValue && boroughValue!='MN')">  MANHATTAN  </button> 
+        <button class="button button-block button-positive" ng-click="boroughValue='BKN'" ng-hide="(boroughValue && boroughValue!='BKN')">  BROOKLYN </button>
+        <button class="button button-block button-stable" ng-click="boroughValue='QNS'" ng-hide="(boroughValue && boroughValue!='QNS')">  Queens </button>   
       </div>
 
       <ion-item ng-repeat="outage in outages" ng-show="outage.borough===boroughValue">
