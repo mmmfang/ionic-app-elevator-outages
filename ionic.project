@@ -4,7 +4,7 @@
   "proxies": [
   	{
   		"path": "/feed",
-  		"proxyUrl": "http://web.mta.info/developers/data/nyct/nyct_ene.xml"
+  		"proxyUrl": "http://mta-outages.herokuapp.com/feed"
   	}]
 }
 
