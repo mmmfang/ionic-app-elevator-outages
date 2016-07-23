@@ -9,7 +9,7 @@ angular.module('mtaApp.XmlConverter', [])
                 var json = x2js.xml_str2json( data );
                 return json;
               }
-            }).success(function(data, status) {
+            }).success(function(data, status){
             // send the converted data back to the callback function
               callback(data);
               console.log(data)
