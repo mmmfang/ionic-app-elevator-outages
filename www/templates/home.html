@@ -1,24 +1,29 @@
 <ion-view title="Subway Accessibility Outages">	
   <ion-content>
+
     <ion-list >
-      <ion-item class="ion-item-right" href="#/list" >
-        <h2>Full list of equipment outages</h2>
-      </ion-item>
       <ion-item href="#/borough" >
-        <h2>Search by Borough</h2>
-      </ion-item>
+        <h2>Search by Borough</h2></ion-item>
       <ion-item href="#/trainline" >
-        <h2>Search by Train Line</h2>
-      </ion-item>
+        <h2>Search by Train Line</h2></ion-item>
+      <ion-item class="ion-item-right" href="#/list" >
+        <h2>Full list of equipment outages</h2></ion-item>
     </ion-list>
- 
-  <!-- SEARCH BAR -->
+    
+        <!-- SEARCH BAR -->
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search by Station">
+        <input type="text" ng-model="searchel" placeholder="Search by Station">
       </label>
     </div>
+    <p>{{searchel}}</p>
+    <ion-list>
+      <ion-item ng-repeat="outage in outages | filter:searchel"  class="item-text-wrap">
+        <outage-listing></outage-listing>
+      </ion-item>
+    </ion-list>
+    
    </ion-content>
 </ion-view> 
       	

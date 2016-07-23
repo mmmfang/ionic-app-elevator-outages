@@ -1,6 +1,7 @@
 (function(){
 var app = angular.module('mtaApp', ['ionic', 'mtaApp.XmlConverter']);
 
+//Routing using Angular UI Routes
 app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('list', {
     url:'/list',
@@ -72,12 +73,12 @@ app.filter('equipmentFilter', function() {
    return function(word) {
    var charZero = word.charAt(0);
    var charOne = word.charAt(1);
-        if (charZero=='E' && charOne=='L') {
-          return "Elevator";
-        } else {
-          return "Escalator";
-        }
-     };
+      if (charZero=='E' && charOne=='L') {
+        return "Elevator";
+      } else {
+        return "Escalator";
+      }
+   };
 });
 
 //To display full borough name from abbreviation provided
@@ -99,7 +100,7 @@ app.filter('boroFilter', function() {
    };
 });
 
-//CUSTOM DIRECTIVE
+//CUSTOM DIRECTIVE 
 app.directive('outageListing', function(){
   return {
     template: '<ng-include src="getTemplateUrl()" />',

@@ -2,10 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="outage in outages" class="item-text-wrap">
-        <h2>{{outage.station}} ({{outage.borough | boroFilter}})</h2>
-        <p>Lines served: {{outage.trainno}}</p>
-        <p>{{outage.equipment | equipmentFilter}} broken at {{outage.serving | lowercase}} </p>
-        <p>Back in Service: {{outage.estimatedreturntoservice}}</p>
+      <outage-listing></outage-listing>
       </ion-item>
     </ion-list>
   </ion-content>
