@@ -23,6 +23,11 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'templates/trainline.html',
     controller: 'TrainlineCtrl'
   });
+  $stateProvider.state('onetrainline', {
+    url:'/onetrainline',
+    templateUrl: 'templates/list2.html',
+    controller: 'TrainlineCtrl'
+  });
   $stateProvider.state('station', {
     url:'/station',
     templateUrl: 'templates/station.html',
@@ -57,14 +62,53 @@ app.controller('BoroCtrl', function($scope, XmlConverter){
 
 
 app.controller('TrainlineCtrl', function($scope, XmlConverter) {
-  var outageData=function(data) {
-    $scope.outages = data.NYCOutages.outage[1];
-    //console.log($scope.outages);
 
-    this.getTrainLines = function(trainno, callback){
-     var inputtedTrain=trainno;
-     console.log(inputtedTrain);
-    }
+    var outageData=function(data) {
+    $scope.outages = data.NYCOutages.outage;
+
+    $scope.getTrainLines = function(trainnum) {
+      console.log(trainnum);
+
+      $scope.outageArray = [];
+      //console.log($scope.outages[1]);
+      var outageAmt = $scope.outages.length;
+      //console.log(outageAmt)
+
+//PLACE IN LATER
+//      $scope.outageArray.push($scope.outages[i].trainno)
+//      console.log($scope.outageArray); //success
+
+      for (i=0; i<outageAmt; i++) {
+        console.log($scope.outages[i].trainno.length);
+        if ($scope.outages[i].trainno.length>=1) {
+          var eachOutageTrainline = $scope.outages[i].trainno.split('/');
+          console.log(eachOutageTrainline) //spliting well
+          
+          if (eachOutageTrainline.includes(trainnum)) {
+            outageArray.push($scope.outages[i]);
+            console.log('i pushed this', outagesArray);
+          } else {
+          console.log('error with this includes line')
+          }
+
+      } //end if
+
+  //         var trainArray=trainLines.split("/");
+  //         for (var i=0; i<trainArray.length; i++) {
+  //           //console.log('tl split for this el', i ,trainArray[i]);
+  //           console.log('fulltrainarray', trainLines);
+  //         }
+      } //end for loop
+
+    } //end scope.trainlines
+  }
+
+    //    if (trainLines.length >= 1) {
+    //       var trainArray=trainLines.split("/");
+    //       for (var i=0; i<trainArray.length; i++) {
+    //         //console.log('tl split for this el', i ,trainArray[i]);
+    //         console.log('fulltrainarray', trainLines);
+    //       }
 
 //code from MEAN stack app
 
@@ -132,10 +176,8 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter) {
 
 //end code from MEAN stack app
 
-
-
-  };
     XmlConverter.get(outageData);
+
 });
 
 app.controller('StationCtrl', function($scope, XmlConverter) {

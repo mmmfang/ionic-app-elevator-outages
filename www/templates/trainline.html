@@ -1,96 +1,96 @@
 <ion-view title="Outages by Trainline"> 
  <ion-content>     
   <br/>
-
+<button ng-click="me='hi'">{{me}}</button>
   <div class="bg-white">
     <div class="row" wrap>
+      <div class="col col-33" ng-click="trainno='1'">
+        <button class="circular-btn bg-white">
+          <img src="img/1.gif" alt="1" width="100%"></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="getTrainLines(1)">
-          <a href="#/list"><img src="img/1.gif" alt="1" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="trainno='2'">
+          <a href="#/onetrainline"><img src="img/2.gif" alt="2"  width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines(2)">
-          <a href="#/list"><img src="img/2.gif" alt="2"  width="100%"></a></button></div>
-      <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines(3)">
-          <a href="#/list"><img src="img/3.gif" alt="3"  width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines(3)">
+          <a href="#/onetrainline"><img src="img/3.gif" alt="3"  width="100%"></a></button></div>
     </div>
 
     <div class="row">
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white"ng-click="train.getTrainLines(4)">
-          <a href="#/list"><img src="img/4.jpg" alt="4" width="100%"></a></button></div>    
+        <button class="circular-btn bg-white" >
+          <a href="#/onetrainline" ng-click="getTrainLines(4)"><img src="img/4.jpg" alt="4" width="100%"></a></button></div>    
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines(5)">
-          <a href="#/list"><img src="img/5.jpg" width="100%" alt="5"></a></button></div>
+        <a href="#/onetrainline"><button class="circular-btn bg-white" ng-click="getTrainLines(5)">
+          <img src="img/5.jpg" width="100%" alt="5"></button></a></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines(6)">
-        <a href="#/list"><img src="img/6.jpg" alt="6" width="100%"></a></button></div> 
+        <button class="circular-btn bg-white" ng-click="getTrainLines(6)">
+        <a href="#onetrainline"><img src="img/6.jpg" alt="6" width="100%"></a></button></div> 
       </div>  
         
     <div class="row" wrap>    
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines(7)">
-        <a href="#/list"><img src="img/7.jpg" alt="7" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines(7)">
+        <a href="#/onetrainline"><img src="img/7.jpg" alt="7" width="100%"></a></button></div>
       <div class="col col-33">   
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('A')">
-        <a href="#/list"><img src="img/A.jpg" alt="A" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('A')">
+        <a href="#/onetrainline"><img src="img/A.jpg" alt="A" width="100%"></a></button></div>
       <div class="col col-33">  
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('B')">
-        <a href="#/list"><img src="img/B.jpg" alt="B" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('B')">
+        <a href="#/onetrainline"><img src="img/B.jpg" alt="B" width="100%"></a></button></div>
     </div>
 
     <div class="row" wrap>    
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('C')">
-        <a href="#/list"><img src="img/C.jpg" alt="C" width="100%"></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('C')">
+        <a href="#/onetrainline"><img src="img/C.jpg" alt="C" width="100%"></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('D')">
-        <a href="#/list"><img src="img/D.jpg" alt="D" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('D')">
+        <a href="#/onetrainline"><img src="img/D.jpg" alt="D" width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('E')">
-        <a href="#/list"><img src="img/E.jpg" alt="E" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('E')">
+        <a href="#/onetrainline"><img src="img/E.jpg" alt="E" width="100%"></a></button></div>
     </div>
 
     <div class="row" wrap>    
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('F')">
-        <a href="#/list"><img src="img/F.jpg" alt="F" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('F')">
+        <a href="#/onetrainline"><img src="img/F.jpg" alt="F" width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('G')">
-        <a href="#/list"><img src="img/G.jpg" alt="G" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('G')">
+        <a href="#/onetrainline"><img src="img/G.jpg" alt="G" width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('J')">
-        <a href="#/list"><img src="img/J.jpg" alt="J" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('J')">
+        <a href="#/onetrainline"><img src="img/J.jpg" alt="J" width="100%"></a></button></div>
     </div>
 
     <div class="row" wrap>  
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('L')">
-        <a href="#/list"><img src="img/L.jpg" alt="L" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('L')">
+        <a href="#/onetrainline"><img src="img/L.jpg" alt="L" width="100%"></a></button></div>
       <div class="col col-33">    
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('M')">
-        <a href="#/list"><img src="img/M.jpg" alt="M" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('M')">
+        <a href="#/onetrainline"><img src="img/M.jpg" alt="M" width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('N')">
-        <a href="#/list"><img src="img/N.jpg" alt="N" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('N')">
+        <a href="#/onetrainline"><img src="img/N.jpg" alt="N" width="100%"></a></button></div>
     </div>
 
     <div class="row" wrap>  
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('Q')">
-        <a href="#/list"><img src="img/Q.jpg" alt="Q" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('Q')">
+        <a href="#/onetrainline"><img src="img/Q.jpg" alt="Q" width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('R')">
-        <a href="#/list"><img src="img/R.jpg" alt="R" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('R')">
+        <a href="#/onetrainline"><img src="img/R.jpg" alt="R" width="100%"></a></button></div>
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('Z')">
-        <a href="#/list"><img src="img/Z.jpg" alt="Z" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('Z')">
+        <a href="#/onetrainline"><img src="img/Z.jpg" alt="Z" width="100%"></a></button></div>
       </div>
 
     <div class="row" wrap>  
       <div class="col col-33">
-        <button href="/onetrainline" class="circular-btn bg-white" ng-click="train.getTrainLines('S')">
-        <a href="#/list"><img src="img/S.jpg" alt="S" width="100%"></a></button></div>
+        <button class="circular-btn bg-white" ng-click="getTrainLines('S')">
+        <a href="#/onetrainline"><img src="img/S.jpg" alt="S" width="100%"></a></button></div>
     </div>
   </div>
  </ion-content>
