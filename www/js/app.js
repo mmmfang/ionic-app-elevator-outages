@@ -25,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider){
   });
   $stateProvider.state('onetrainline', {
     url:'/onetrainline',
-    templateUrl: 'templates/list2.html',
+    templateUrl: 'templates/trainline-selected.html',
     controller: 'TrainlineCtrl'
   });
   $stateProvider.state('station', {
@@ -65,6 +65,7 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
 
   var outageData=function(data) {
     $scope.outages = data.NYCOutages.outage;
+    $scope.outerArray = [];
 
     $scope.getTrainLines = function(trainnum) {
      console.log(trainnum);      
@@ -92,77 +93,17 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
             }
           }
           eachOutageTrainline.forEach(checkTrain);
-        } //end if      
-      } console.log($scope.outageArray);//end for loop
-    };
-  }; XmlConverter.get(outageData);
+        }   
+      } $scope.outageArray.forEach(function(item){ 
+          $scope.outerArray.push(item);
+        }); //pushing inner array to outer to ensure can be viewed on top level scope
+      
+    }; console.log($scope.outerArray);
+      console.log($scope.outerArray.length);
+      console.log($scope.outerArray[1]);
+
+  }; XmlConverter.get(outageData); 
 });
-
-//code from MEAN stack app
-
-  // var controller=this;
-
-  // //TO GET OUTAGES BY TRAIN LINE - USING THE XML DATA
-  // this.getTrainLines = function(trainno, callback){
-  //   var inputtedTrain=trainno;
-
-  //   var promise = $http.get('/feed');
-  //   promise.success(function(data){
-  //     controller.allData = data;
-
-  //   $(data).find("outage").each(function(){
-  //     var singleOutage = this;
-  //     var trainLines= $(singleOutage).find("trainno").text(); 
-
-  //      if (trainLines.length >= 1) {
-  //         var trainArray=trainLines.split("/");
-  //         for (var i=0; i<trainArray.length; i++) {
-  //           //console.log('tl split for this el', i ,trainArray[i]);
-  //           console.log('fulltrainarray', trainLines);
-  //         }
-
-  //         var checkEquip = $(singleOutage).find("equipment").text();
-  //         var whichEquipment = elOrEsc(checkEquip);
-
-  //         var findBoro = $(singleOutage).find("borough").text();
-  //         var whichBoro =  filterBoro(findBoro);
-
-  //        if (trainLines.includes(inputtedTrain)) {
-
-  //         $('#box').append('<div id="info-box"><div class="station"><li>' + 
-  //         $(singleOutage).find("station").text() +
-          
-  //         '</div><table class="table-condensed"><tr><td>Current Outage: </td><td><strong>' 
-  //         + whichEquipment + ' at ' + 
-  //         $(singleOutage).find("serving").text().toLowerCase() + 
-
-  //         '</td></tr><tr><td>Scheduled Return to Service: </td><td>' + 
-  //         $(singleOutage).find("estimatedreturntoservice").text() + 
-
-  //         '</strong></td></tr><tr><td>Station Info: </td><td>'
-  //         + whichBoro + '; ' + 
-  //         $(singleOutage).find("trainno").text() +
-
-  //         '</td></tr><tr><td>Reason for Outage: </td><td>' + 
-  //         $(singleOutage).find("reason").text().toLowerCase() + 
-          
-  //         '</td></tr><tr><td>Outage began: </td><td>' + 
-  //         $(singleOutage).find("outagedate").text() +
-  //         '</td></tr></table></div>');
-
-  //       } else {
-  //         //console.log('not displaying since not correct trainline')
-  //       };
-       
-  //     } else {
-  //       console.log('possible err,single trainline is', trainLines)
-  //     };
-
-  //     });
-  //   })//end of data.find
-  // }; this.getTrainLines();/
-
-//end code from MEAN stack app
 
 
 app.controller('StationCtrl', function($scope, XmlConverter) {
