@@ -68,7 +68,7 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
 
   var outageData=function(data) {
     $scope.outages = data.NYCOutages.outage;
-    $scope.outerArray = [];
+ //   $scope.outerArray = [];
 
     $scope.getTrainLines = function(trainnum) {
      console.log(trainnum);      
@@ -97,13 +97,13 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
           }
           eachOutageTrainline.forEach(checkTrain);
         }   
-      } $scope.outageArray.forEach(function(item){ 
+      } 
+      /**not needed 
+        $scope.outageArray.forEach(function(item){ 
           $scope.outerArray.push(item);
         }); //pushing inner array to outer to ensure can be viewed on top level scope
-      
-    }; console.log($scope.outerArray);
-      console.log($scope.outerArray.length);
-      console.log($scope.outerArray[1]);
+      **/
+    }; console.log($scope.outageArray);
 
   }; XmlConverter.get(outageData); 
 });
