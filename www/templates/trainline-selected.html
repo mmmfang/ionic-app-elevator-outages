@@ -1,13 +1,9 @@
-
 <ion-content>
 <h1>one train</h1>
-
-<div>{{trainline.outerArray}}</div>
-<div>{{outerArray}}</div>
-<div>{{TrainlineCtrl.outerArray}} lala</div>
-<div>{{trainline}}tl</div>
-<div>{{outerArray[1]}} 1</div>
-<div ng-repeat="out in outerArray">
-<div ng-repeat="inner in out">{{inner}} in </div>
-</div>
+<!-- <div>{{outerArray}}</div> -->
+  <ion-list> 
+	<ion-item ng-repeat="outage in outerArray" class="item-text-wrap">
+		<outage-listing></outage-listing>
+	</ion-item>
+  </ion-list>
  </ion-content>

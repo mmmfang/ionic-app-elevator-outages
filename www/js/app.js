@@ -23,15 +23,13 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl:'templates/tl.html',
     controller: 'TrainlineCtrl'
   }).state('trainline.all',{
-
     parent:'trainline',
     url:'/all',
     templateUrl: 'templates/trainline.html'
-  }).state('onetrainline', {
+  }).state('trainline.one', {
     url:'/onetrainline',
     parent: 'trainline',
     templateUrl: 'templates/trainline-selected.html'
-
   });
   $stateProvider.state('station', {
     url:'/station',
