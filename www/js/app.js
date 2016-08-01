@@ -18,6 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'templates/borough.html',
     controller: 'BoroCtrl'
   });
+  //the parent State allows me to inherit the same controller info for the children
   $stateProvider.state('trainline',{
     url:'/trainline',
     templateUrl:'templates/tl.html',
@@ -41,7 +42,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 app.controller('OutageCtrl', function($scope, XmlConverter){
   var outageData = function(data) {
-    //console.log("outageData", data.NYCOutages.outage); //array of 40 objects
     $scope.outages = data.NYCOutages.outage;
   };
     XmlConverter.get(outageData);
@@ -70,25 +70,18 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
     $scope.outages = data.NYCOutages.outage;
  //   $scope.outerArray = [];
     $scope.getTrainLines = function(trainnum) {
-      console.log(trainnum);      
-
+      console.log(trainnum);    
       $scope.outageArray = [];
 
       var outageAmt = $scope.outages.length;
 
       for (i=0; i<outageAmt; i++) {
         if ($scope.outages[i].trainno.length>=1) {
-
-          var eachOutageTrainline = $scope.outages[i].trainno.split('/');//object
-          //console.log(eachOutageTrainline) //spliting well
+          var eachOutageTrainline = $scope.outages[i].trainno.split('/');
 
           function checkTrain(item){
             if (item == trainnum) {
-             // $scope.outageArray.push($scope.outages);
-              $scope.tr = true;
-              console.log($scope.tr);
               $scope.outageArray.push($scope.outages[i]);
-
             } else {
               console.log("not equal trainnum")
             }
@@ -96,10 +89,10 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
           eachOutageTrainline.forEach(checkTrain);
         }   
       } 
-      /**not needed 
+      /** unnecessary (pushed inner array to outer to ensure can be viewed on top level scope)
         $scope.outageArray.forEach(function(item){ 
           $scope.outerArray.push(item);
-        }); //pushing inner array to outer to ensure can be viewed on top level scope
+        }); 
       **/
     }; console.log($scope.outageArray);
   }; XmlConverter.get(outageData); 
