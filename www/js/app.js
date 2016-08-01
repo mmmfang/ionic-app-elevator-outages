@@ -18,13 +18,18 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'templates/borough.html',
     controller: 'BoroCtrl'
   });
-  $stateProvider.state('trainline', {
+  $stateProvider.state('trainline',{
     url:'/trainline',
-    templateUrl: 'templates/trainline.html',
+    templateUrl:'templates/tl.html',
     controller: 'TrainlineCtrl'
-  });
-  $stateProvider.state('onetrainline', {
+  }).state('trainline.all',{
+    controller: 'TrainlineCtrl',
+    parent:'trainline',
+    url:'/all',
+    templateUrl: 'templates/trainline.html'
+  }).state('onetrainline', {
     url:'/onetrainline',
+    parent: 'trainline',
     templateUrl: 'templates/trainline-selected.html',
     controller: 'TrainlineCtrl'
   });
