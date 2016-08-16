@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     url:'/all',
     templateUrl: 'templates/trainline.html'
   }).state('trainline.one', {
-    url:'/onetrainline',
+    url:'/selected',
     parent: 'trainline',
     templateUrl: 'templates/trainline-selected.html'
   });
@@ -70,6 +70,7 @@ app.controller('TrainlineCtrl', function($scope, XmlConverter){
     $scope.outages = data.NYCOutages.outage;
  //   $scope.outerArray = [];
     $scope.getTrainLines = function(trainnum) {
+      $scope.trainnum = trainnum;
       console.log(trainnum);    
       $scope.outageArray = [];
 
